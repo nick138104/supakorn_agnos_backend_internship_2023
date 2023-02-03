@@ -5,7 +5,9 @@
 #### file .env
 
 สร้าง .env file ที่มี CONNECTION_STRING ที่เอาไว้ต่อ postgresql
-```CONNECTION_STRING = "user=<username> password=<password> dbname=<database_name> sslmode=disable"```
+```
+CONNECTION_STRING = "user=<username> password=<password> dbname=<database_name> sslmode=disable"
+```
 โดยใส่ username, password และ database_name ของ postgresql ที่จะใช้ในการเก็บ log ผลลัพท์
 
 #### table in database
@@ -22,5 +24,5 @@ init_password จะทำการเก็บ password ที่ส่งม�
 ## Unit Test
 
 สำหรับการ run ตัว unit test สามารถใช้คำสั่ง
-```go test ```
+```go test```
 จะทำการ run unit test ของ file password_validation_test.go ที่ทำการทดสอบ function password_validation ใน server.go
