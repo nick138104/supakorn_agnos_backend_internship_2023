@@ -16,9 +16,10 @@ import (
 
 // for mapping json request body
 type Request struct {
-	Init_password string
+	Init_password string // password before checking
 }
 
+// return total action needed to make string pwd become strong password
 func password_validation(pwd string) int {
 	k := 0 // total of add or remove char
 	// check short or long password
@@ -69,7 +70,7 @@ func password_validation(pwd string) int {
 			}
 		}
 	}
-
+	// check uppercase, lowercase and digit
 	for _, value := range flag {
 		if !value {
 			if re > 0 {
@@ -85,6 +86,7 @@ func password_validation(pwd string) int {
 }
 
 func main() {
+	// load .env file
 	godotenv.Load()
 
 	// connect to database
